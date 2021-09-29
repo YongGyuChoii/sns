@@ -70,6 +70,7 @@
 
     <script>
         $(document).ready(function() {
+            bsCustomFileInput.init();
             showsns();
         });
 
@@ -86,13 +87,23 @@
         function postsns() {
             let user = $('#user').val()
             let title = $('#title').val()
-            let file = $('#file').val()
             let comment = $('#comment').val()
+
+            let file = $('#file')[0].files[0];
+            let form_data = new FormData();
+
+            form_data.append("file_give", file);
+            form_data.append("user_give", user);
+            form_data.append("title_give", title);
+            form_data.append("comment_give", comment);
 
             $.ajax({
                 type: "POST",
                 url: "/sns",
-                data: {user_give:user,title_give:title,file_give:file,comment_give:comment},
+                data: form_data,
+                cache: false,
+                contentType: false,
+                processData: false,
                 success: function (response) { // 성공하면
                     alert(response["msg"]);
                     window.location.reload();
