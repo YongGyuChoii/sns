@@ -1,0 +1,91 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="../static/style.css" type="text/css">
+    <title>메인로고</title>
+
+
+</head>
+
+<body>
+<div class="navbar">
+        <div class="logo">
+            <a href="/"><img src="../static/logo.png"></a>
+        </div>
+        <nav class="navy">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" href="/...">지도검색</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/snspet">SNS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/...">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/...">sign in/sign up</a>
+                </li>
+            </ul>,
+        </nav>
+    </div>
+    <div class="pic">
+        <div class="hotel">
+            <img alt="명동 뉴서울호텔 | 전경" class="swiper-lazy swiper-lazy-loaded" src="//image.goodchoice.kr/resize_490x348/adimg_new/69041/19415/76471771556d9ece792699bf7c21c31c.jpg">
+            <div class="info">
+                <p class="type">호텔이름</p>
+                <table class="txtinfo">
+                    <tbody>
+                    <tr>
+                        <td class="title"><a href="/movie">000호텔</a></td>
+                    </tr>
+                    <tr>
+                        <th>위치 :</th>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="desc">
+                    <span>특징</span>
+                    <p>끝내줌</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<div class="review-box">
+    <span><label for="review-writer">작성자</label></span>
+    <span><input name="review-writer" id="review-writer"></span><br>
+    <textarea name="review-comment" id="review-comment" class="form-control" rows="3" placeholder="방문 후기를 남겨주세요!"></textarea><br>
+
+    <div class="view-area">
+    <br>
+    <span><button type="button" class="btn save" onclick="removeContent()">취소</button></span>
+    <span><button type="button" class="btn btn-primary save" onclick="postReview()">리뷰저장</button></span>
+    </div>
+</div>
+</body>
+
+</html>

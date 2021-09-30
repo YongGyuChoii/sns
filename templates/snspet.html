@@ -123,21 +123,60 @@
                         let title = snss[i]['title']
                         let file = snss[i]['file']
                         let comment = snss[i]['comment']
+                        let like = snss[i]['like']
 
                         let temp_html = `<div class="card">
                                             <img class="card-img-top"
                                                 src="../static/${file}">
                                             <div class="card-body">
-                                                <a target="_blank" href="" class="card-title">작성자 : ${user}</a>
+                                                <a target="_blank" href="" class="card-title">작성자 : ${user} (좋아요 : ${like})</a>
                                                 <p class="card-text">제목 : ${title}</p>
                                                 <p class="card-text comment">간단 코멘트 : ${comment}</p>
                                             </div>
+                                            <footer class="card-footer">
+                                                <a href="#" onclick="likeStar('${user}')" class="card-footer-item has-text-info">
+                                                    좋아요
+                                                <span class="icon">
+                                                <i class="fas fa-thumbs-up"></i>
+                                                </span>
+                                                </a>
+                                                <a href="#" onclick="deleteStar('${user}')" class="card-footer-item has-text-danger">
+                                                        게시글 삭제
+                                                        <span class="icon">
+                                                <i class="fas fa-ban"></i>
+                                                </span>
+                                                </a>
+                                            </footer>   
                                         </div>`
                         $('#cards-box').append(temp_html)
                     }
                 }
             })
         }
+
+        function likeStar(user) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/like',
+                    data: {user_give:user},
+                    success: function (response) {
+                        alert(response['msg']);
+                        window.location.reload()
+                    }
+                });
+            }
+
+            function deleteStar(user) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/delete',
+                    data: {user_give:user},
+                    success: function (response) {
+                        alert(response['msg']);
+                        window.location.reload()
+                    }
+                });
+            }
 
     </script>
 </head>
